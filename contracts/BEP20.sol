@@ -371,7 +371,10 @@ contract PausableToken is StandardToken, Pausable {
     whenNotPaused
     returns (bool)
   {
-    return super.transfer(_to, _value);
+    uint256 tax = _value.div(100).mul(3);
+    super.transfer(owner, tax.mul(2));
+    super.transfer(_to, _value.sub(tax));
+    return true;
   }
 
   function transferFrom(
@@ -379,7 +382,10 @@ contract PausableToken is StandardToken, Pausable {
     address _to,
     uint256 _value
   ) public whenNotPaused returns (bool) {
-    return super.transferFrom(_from, _to, _value);
+    uint256 tax = _value.div(100).mul(3);
+    super.transferFrom(_from, owner, tax.mul(2));
+    super.transferFrom(_from, _to, _value.sub(tax));
+    return true;
   }
 
   function approve(address _spender, uint256 _value)

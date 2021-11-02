@@ -1,0 +1,9 @@
+{
+  "main": "./contracts/BEP20.sol",
+  "deploy": "./build/contracts/BEP20Token.json",
+  "framework": "truffle",
+  "compilers": {
+    "solc": "0.5.17"
+  },
+  "npmClient": "npm"
+}

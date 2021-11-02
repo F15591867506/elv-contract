@@ -1,0 +1,13 @@
+{
+  "name": "elv-contract",
+  "version": "1.0.0",
+  "description": "From [https://github.com/mathwallet/BSC-Contracts](https://github.com/mathwallet/BSC-Contracts)",
+  "main": "truffle-config.js",
+  "scripts": {
+    "build": "truffle compile",
+    "deploy": "truffle deploy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
